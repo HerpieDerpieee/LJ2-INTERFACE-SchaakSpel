@@ -1,4 +1,4 @@
-export const swapCurrentTurn = (color) => {
+export const swapTurnColor = (color) => {
     if (color === "black"){
         return "white";
     } else if (color==="white"){

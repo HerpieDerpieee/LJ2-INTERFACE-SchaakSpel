@@ -2,7 +2,7 @@
 import { createStarterBoard } from "./pieces/startingPositions.js";
 import { updateBoard } from "./board/updateBoard.js";
 import { handleDrop, allowDrop } from "./input/movementManager.js";
-import {swapCurrentTurn} from "./util/swapCurrentTurn.js";
+import {swapTurnColor} from "./util/swapCurrentTurn.js";
 
 let currentBoard = createStarterBoard();
 let currentTurn = "white";
@@ -11,9 +11,9 @@ export const getCurrentBoard = () => {
     return [...currentBoard];
 }
 export const changeCurrentTurn = () => {
-    currentTurn = swapCurrentTurn(currentTurn);
+    currentTurn = swapTurnColor(currentTurn);
     document.querySelector("#turnIndicator").style.backgroundColor = currentTurn;
-    document.querySelector("#turnIndicator").style.color = swapCurrentTurn(currentTurn);
+    document.querySelector("#turnIndicator").style.color = swapTurnColor(currentTurn);
 }
 export const getCurrentTurn = () => {
     return currentTurn;
